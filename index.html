@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WhatsApp Bonos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(to bottom right, #e8fff3, #c1f2e1);
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 10px 0 10px;
+    }
+
+    header {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .logo-text {
+      color: #04a419;
+      font-weight: 800;
+      font-size: 28px;
+      text-shadow: 1px 1px 2px #00000022;
+    }
+
+    hr {
+      width: 100%;
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 20px 0;
+    }
+
+    .verified {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .verified h2 {
+      font-size: 22px;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .verified .green {
+      color: #00b86b;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .tick {
+      width: 22px;
+      height: 22px;
+    }
+
+    .whatsapp-logo {
+      width: 60px;
+      margin: 10px 0;
+    }
+
+    .mensaje-bono {
+      background: #fff3cd;
+      border: 1px solid #ffeeba;
+      padding: 14px;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      font-weight: 600;
+      color: #856404;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .whatsapp-button {
+      background: linear-gradient(135deg, #00e676, #1de9b6);
+      color: white;
+      padding: 16px 28px;
+      border-radius: 45px;
+      font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      box-shadow: 0 0 15px #25d366;
+      animation: pulse-glow 2s infinite, shine 3s infinite;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 15px #25d366; }
+      50% { box-shadow: 0 0 30px #00ff99; }
+    }
+
+    @keyframes shine {
+      0% { background-position: -200px; }
+      100% { background-position: 200px; }
+    }
+
+    .whatsapp-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #00ff99;
+    }
+
+    .clientes {
+      background-color: #00c9a7;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      margin: 14px 0;
+      text-align: center;
+    }
+
+    .carousel-container {
+      width: 100%;
+      max-width: 400px;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+      background: #fff;
+    }
+
+    .carousel-track {
+      display: flex;
+      animation: scroll-carousel 15s linear infinite;
+    }
+
+    .carousel-track img {
+      width: 140px;
+      height: 180px;
+      object-fit: cover;
+      margin-right: 10px;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    @keyframes scroll-carousel {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .notificacion {
+      position: fixed;
+      bottom: 60px;
+      left: 10px;
+      background: #222;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 11px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      z-index: 9999;
+    }
+
+    .notificacion img {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      margin-right: 8px;
+    }
+
+    .footer {
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      background: linear-gradient(to right, #00d084, #25d366);
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      font-size: 15px;
+      margin-top: 20px; /* ya no fixed */
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px 10px 20px 10px;
+      }
+      .carousel-container {
+        max-width: 100%;
+      }
+      .carousel-track img {
+        width: 100px;
+        height: 140px;
+      }
+      .whatsapp-button {
+        font-size: 14px;
+        padding: 12px 20px;
+      }
+      .mensaje-bono {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-text">🎰 WhatsApp Casino Ganamos</div>
+    <img class="whatsapp-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="WhatsApp Logo" />
+  </header>
+
+  <a class="whatsapp-button" 
+     href="https://api.whatsapp.com/send?phone=542255578095&text=Buenas,%20quiero%20informacion"  
+     target="_blank">
+    📲 ¡QUIERO MI USUARIO!
+  </a>
+
+  <hr />
+
+  <section class="verified">
+    <h2>
+      ✅ Plataforma Verificada y Segura
+      <img class="tick" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Twitter_Verified_Badge.svg" alt="Verificado" />
+    </h2>
+    <p class="green">💸 🍀¿Qué esperas para ganar? 🔥🍀 ¡✨¡¡La suerte te esta llamando!!✨🧿!</p>
+  </section>
+
+  <div class="mensaje-bono">
+    💥 MINIMO DE CARGA 1000💥<br/> 🤑PEDI TU USUARIO GRATIS!🤑<br/>⏱️ATENCION Y PAGOS 24HS!🤞🎯 <br>🍀¡¿Qué esperas para GANAR?!🔥🍀
+  </div>
+
+  <a class="whatsapp-button" 
+     href="https://api.whatsapp.com/send?phone=542255578095&text=Buenas,%20quiero%20informacion"  
+     target="_blank">
+    📲 ¡QUIERO MI USUARIO!
+  </a>
+
+  <div class="clientes">
+    👥 +10.000 CLIENTES GANANDO todos los días
+  </div>
+
+  <!-- CARRUSEL -->
+ <div class="carousel-container">
+    <div class="carousel-track">
+      <img src="imag/pago1.jpeg" alt="Pago 1">
+      <img src="imag/pago2.jpeg" alt="Pago 2">
+      <img src="imag/pago3.jfif" alt="Pago 3">
+      
+      <!-- duplicadas para loop -->
+      <img src="imag/pago1.jpeg" alt="Pago 1">
+      <img src="imag/pago2.jpeg" alt="Pago 2">
+      <img src="imag/pago3.jfif" alt="Pago 3">
+    
+    </div>
+  </div>
+
+  <!-- NOTIFICACION -->
+  <div class="notificacion" id="notificacion">
+    <img src="https://cdn-icons-png.flaticon.com/512/854/854894.png" alt="usuario" />
+    <div id="noti-text"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    🎁 ¡Proba tu SUERTE con nosotros!
+  </div>
+
+  <script>
+    const premios = [
+      { nombre: "Carlos", monto: "$10.000", ciudad: "Buenos Aires", tiempo: "hace 13 min" },
+      { nombre: "Laura", monto: "$15.500", ciudad: "Córdoba", tiempo: "hace 20 min" },
+      { nombre: "Lujan", monto: "$18.200", ciudad: "Rosario", tiempo: "hace 3 min" },
+      { nombre: "Sofía", monto: "$15.000", ciudad: "Mendoza", tiempo: "hace 4 min" },
+      { nombre: "Pedro", monto: "$7.300", ciudad: "Tucumán", tiempo: "hace 5 min" },
+      { nombre: "Daniela", monto: "$350.000", ciudad: "Cordoba", tiempo: "hace 1 min" },
+      { nombre: "Tadeo", monto: "$68.000", ciudad: "Buenos Aires", tiempo: "hace 50 min" },
+      { nombre: "Cecilia", monto: "$155.500", ciudad: "Jujuy", tiempo: "hace 10 min" },
+    ];
+
+    let indice = 0;
+    function actualizarNotificacion() {
+      const notificacion = document.getElementById("notificacion");
+      const notiText = document.getElementById("noti-text");
+      const premio = premios[indice % premios.length];
+      notiText.innerHTML = `
+        <strong>${premio.nombre}</strong><br />
+        🎁 Reclamó su premio de ${premio.monto}<br />
+        📍 Desde ${premio.ciudad} • ${premio.tiempo}
+      `;
+      indice++;
+    }
+
+    setInterval(actualizarNotificacion, 2500);
+    actualizarNotificacion();
+  </script>
+</body>
+</html>
